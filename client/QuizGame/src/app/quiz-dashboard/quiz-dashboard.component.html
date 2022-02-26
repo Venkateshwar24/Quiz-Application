@@ -1,0 +1,45 @@
+<!-- Button trigger modal -->
+<div class="container mt-5 text-center">
+
+
+    <h1 class="mt-2">WELCOME TO PLAY THE QUIZ GAME!</h1>
+    <p>Task Submission for Credicxo Tech Private Limited</p>
+
+    <button type="button" class="btn btn-orange mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Start the Quiz
+    </button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">INSTRUCTIONS</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div> 1) You will be given 6 questions. </div>
+                <div> 2) Each question will have one correct answer.</div>
+                <div>3) After choosing the answer:</div>
+                <div class="ml-5"> I. If the option chosen is correct then it will be highlighted using
+                    green color.</div>
+                <div class="ml-5"> II. If it is a wrong option then it will be highlighted using red color
+                    while still highlighting the correct option with green color
+                    simultaneously.</div>
+                <div> 4) You will be redirected to the next question automatically after choosing the answer for the
+                    current one.</div>
+                <div>5) Each question carries some score and After completion of all questions, You should submit the
+                    quiz.</div>
+                <div>6) Your scores will be displayed with a option to view leaderboard.</div>
+                <div> 7) You may also retry the test.</div>
+                <div> 8) questions and choices will be shuffled for every try.</div>
+                <div>9) All the best for your quiz. </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-orange" data-bs-dismiss="modal" routerLink='/quiz'
+                    routerLinkActive="active">Start Quiz</button>
+            </div>
+        </div>
+    </div>
+</div>

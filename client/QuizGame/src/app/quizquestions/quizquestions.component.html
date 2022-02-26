@@ -1,0 +1,47 @@
+<div class="container">
+
+    <div class="row mt-4 d-flex justify-content-between">
+        <span class="col"> Question No : {{questionNumber}}</span>
+        <span class="col float-right">Score : {{userScore}}</span>
+
+    </div>
+    <nav class="navbar navbar-light bg-light my-4 p-2">{{currQues.question}}</nav>
+    <div *ngFor="let option of optionsForQuestion">
+        <div class="d-grid gap-2  mx-auto">
+            <button type="button" class="btn btn-light my-2"
+                (click)="checkAnswer(option,currQues.answer, $event.target.innerText)"
+                [style.background-color]="colorChange(option,currQues.answer)">
+
+                {{option}}</button>
+
+        </div>
+    </div>
+    <button *ngIf="questionNumber=== total_questions" type="submit" class="btn btn-orange mt-2 float-right"
+        (click)="onQuizSubmit()" data-bs-toggle="modal" data-bs-target="#resultView">submit</button>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="resultView" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="resultViewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="resultViewLabel">Your Score</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">Congrats {{userName}}, You've scored : </div>
+                <div class="text-center">
+                    <h2><strong>{{userScore}}</strong> Points</h2>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        (click)="restartQuiz()">retry</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        (click)="viewLeaderBoard()">View LeaderBoard</button>
+                </div>
+            </div>
+        </div>
+    </div>

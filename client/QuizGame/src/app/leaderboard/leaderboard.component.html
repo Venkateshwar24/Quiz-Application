@@ -1,0 +1,20 @@
+<div class="container text-center">
+  <h1>LEADERBOARD</h1>
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Player Name</th>
+        <th scope="col">Highest Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let score of leaderBoard | slice:0:10 ">
+        <td>{{score.user_name}}</td>
+        <td>{{score.quiz_score}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

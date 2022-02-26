@@ -1,0 +1,35 @@
+<div class="container sticky-top px-0 ">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="">
+        <i class="fa fa-yelp fa-2x bg-orange " aria-hidden="true" ></i>
+  
+       <span class="pl-1"> <strong>QUIZ GAME</strong></span> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"  (click)="isMenuCollapsed = !isMenuCollapsed"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div  class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          
+          <li class="nav-item ">
+            <button class="btn" *ngIf="!authService.isLoggedIn()" routerLink='/login' routerLinkActive="active"
+              type="submit"  (click)="isMenuCollapsed = true">Login</button>
+          </li>
+        <li class="nav-item ">
+          <button class="btn" *ngIf="!authService.isLoggedIn()" routerLink='/signup' routerLinkActive="active"
+            type="submit"  (click)="isMenuCollapsed = true"> <i class="fa fa-sign-in pr-1 bg-orange" aria-hidden="true"></i>
+            Sign up</button>
+        </li>
+        <li class="nav-item px-2">
+          <button class="btn " *ngIf="authService.isLoggedIn()" (click)="authService.logoutUser()"
+            (click)="isMenuCollapsed = true"><i class="fa fa-user-circle-o pr-1 bg-orange" aria-hidden="true"></i>
+            Logout</button>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  </div>
+
+<router-outlet></router-outlet>
